@@ -4,8 +4,7 @@ $(function(){
         $('.header__search-bar').slideToggle();
     });
 
-    $('.header-slider').slick({
-        
+    $('.header-slider').slick({       
     });
 
 });
