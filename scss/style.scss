@@ -1,11 +1,19 @@
 $bg-white: #f9fafc;
 $font: 'Poppins', sans-serif;
-$bg-black: #181817;
+$color-black: #181817;
 $font-color: #fefefe;
 $color-yellow: #ffce76;
 
 %inner {
     padding: 100px 0;
+}
+
+%yellow-hr {
+    border: $color-yellow 2px solid;
+    width: 63px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 20px;
 }
 
 %title {
@@ -32,6 +40,13 @@ $color-yellow: #ffce76;
     }
 }
 
+%item-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 body {
     background-color: $bg-white;
     font-family: $font;
@@ -54,7 +69,7 @@ li {
 }
 
 a {
-    color: $font-color;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -73,7 +88,7 @@ input::-moz-placeholder {
 }
 
 .header{
-    background-color: $bg-black;
+    background-color: $color-black;
     &-top {
         display: flex;
         align-items: center;
@@ -148,11 +163,7 @@ input::-moz-placeholder {
             font-weight: 700;
         }
         &__hr {
-            border: $color-yellow 2px solid;
-            width: 63px;
-            display: inline-block;
-            vertical-align: text-top;
-            margin-right: 20px;
+            @extend %yellow-hr;
         }
     }   
 }
@@ -169,6 +180,7 @@ input::-moz-placeholder {
     background-color: inherit;
     top: 513px;
     outline: none;  
+    cursor: pointer;
 }
 
 .slick-prev {
@@ -183,7 +195,7 @@ input::-moz-placeholder {
 }
 
 .advantages {
-    background-color: $bg-black;
+    background-color: $color-black;
     &__inner {
         @extend %inner;
     }
@@ -207,10 +219,7 @@ input::-moz-placeholder {
         display: flex;
         &-title {
             color: $color-yellow;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 20px;
-            margin-bottom: 20px;
+            @extend %item-title;
         }
         &-text {
             font-size: 14px;
@@ -237,5 +246,182 @@ input::-moz-placeholder {
     }
     &__logo {
         height: 71px;
+    }
+}
+
+.products {
+    &__items {
+        display: grid;
+        grid-template-columns: 20% 38% 23% 19%;
+        grid-template-rows: 47% 46%;
+    } 
+    &__item {
+        padding: 100px;
+    }
+    &__item--font-green {
+        color: #749d26;
+        background-image: url(../img/products-image-1.png);
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    &__item--plane {
+        padding: 0;
+        background-color: #e5e5e5;
+    }
+    &__image--plane {
+        display: block;
+        margin: 0 auto;
+    }
+    &__item--font-blue {
+        color: #599ba7;
+        background-image: url(../img/products-image-3.png);
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    &__item--font-black {
+        color: #352b30;
+        background-image: url(../img/products-image-4.png);
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+    &__title {
+        font-size: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        width: 143px;
+        margin-bottom: 40px;
+        &--width {
+            width: 216px;
+        }
+    }
+    &__details {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &__arrow {
+        vertical-align: middle;
+    }
+}
+
+.collection {
+
+    &__inner {
+        padding: 33px;
+    }
+
+    &__title {
+        @extend %title;
+        color: $color-black;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        color: $color-black;
+    }
+
+    &__image {
+        background-repeat: no-repeat;
+        height: 227px;
+    }
+
+    &__image--1 {
+        background-image: url(../img/collection-item-1.png);
+    }
+
+    &__image--2 {
+        background-image: url(../img/collection-item-2.png);
+    }
+
+    &__image--3 {
+        background-image: url(../img/collection-item-3.png);
+    }
+    
+    &__image--4 {
+        background-image: url(../img/collection-item-4.png);
+    }
+    
+    &__image--5 {
+        background-image: url(../img/collection-item-5.png);
+    }
+    
+    &__image--6 {
+        background-image: url(../img/collection-item-6.png);
+    }
+    
+    &__image--7 {
+        background-image: url(../img/collection-item-7.png);
+    }
+    
+    &__image--1 {
+        background-image: url(../img/collection-item-1.png);
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 269px;
+        background-color: #fff;
+        margin: 0px 18px 18px 0px;
+
+        &-description {
+            padding: 26px;
+        }
+
+        &-title {
+            @extend %item-title;
+        }
+
+        &-subtitle {
+            font-size: 14px;
+            color: #6d6d6d;
+            margin-bottom: 25px;
+            letter-spacing: 0;
+        }
+
+        &-price {
+            font-size: 28px;
+            font-weight: 600;
+        }
+    }
+}
+
+.designer {
+
+    &__inner {
+        background-image: url(../img/designer-bg.png);
+        @extend %inner;
+    }
+
+    &__title {
+        @extend %title;
+        color: $color-yellow;
+    }
+
+    &__image {
+        margin-bottom: 30px;
+    }
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 25px;
+    }
+
+    &__name {
+        font-size: 30px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        hr {
+            @extend %yellow-hr;
+            width: 173px;
+            border: #ffce76 1.5px solid;
+            margin: 0;
+        }
     }
 }
