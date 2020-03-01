@@ -7,4 +7,8 @@ $(function(){
     $('.header-slider').slick({       
     });
 
+    $('.project__slider').slick({
+        speed: 1000       
+    });
+
 });
