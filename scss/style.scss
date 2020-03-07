@@ -82,6 +82,14 @@ input::-moz-placeholder {
     color: #cdcdcd;
 }
 
+input[type="email"]::-webkit-input-placeholder {
+    color: #636363;
+}
+
+input[type="email"]::-moz-placeholder {
+    color: #636363;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1170px;
@@ -504,4 +512,136 @@ input::-moz-placeholder {
 
 .project__items.slick-slide {
     display: flex;
+}
+
+.blog {
+
+    &__inner {
+        @extend %inner;
+    }
+
+    &__title {
+        @extend %title;
+        color: $color-black;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        background-color: #fff;
+        width: 372px;
+
+        &-info {
+            padding: 40px 25px;
+        }
+
+        &-title {
+            color: #000;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            width: 330px;
+        }
+
+        &-description {
+            color: #31302d;
+            font-size: 14px;
+            margin-bottom: 37px;
+        }
+    }
+
+    &__btn {
+        text-transform: uppercase;
+        color: #000;
+        font-weight: 600;
+        padding: 14px;
+        background-color: $color-yellow;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+}
+
+.footer {
+
+    &__inner {
+        background-color: $color-black;
+        padding: 60px 0px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        letter-spacing: 0;
+    }
+
+    &__item {
+        border-left: #a28550 3px solid;
+        padding: 10px 0px 10px 20px;
+        width: 288px;
+        margin-bottom: 60px;
+
+        &-info {
+            font-size: 14px;
+            line-height: 11px;
+
+            p {
+                margin: 0;
+            }
+
+            &--gray {
+                color: #8c8c8b;
+            }
+
+            &--line-height {
+                line-height: 19px;
+            }
+        }
+
+        &--border-none {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &__title {
+        color: $color-yellow;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        &--white {
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+
+    &__logo-image  {
+        margin-bottom: 30px;
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__input-email {
+        background-color: inherit;
+        border: 1px solid #636363;
+        padding: 15px;
+        width: 370px;
+        outline: none;
+        margin-bottom: 15px;
+        background-image: url(../img/arrow-gray.png);
+        background-repeat: no-repeat;
+        background-position: 329px 19px;
+        color: #fff;
+    }
 }
